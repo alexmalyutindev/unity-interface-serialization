@@ -90,10 +90,10 @@ namespace AlexMalyutinDev.InterfaceSerialization
 			}
 		}
 
-		// public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-		// {
-		// 	return height;
-		// }
+		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+		{
+			return height;
+		}
 
 		public object GetValue(SerializedProperty property)
 		{

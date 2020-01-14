@@ -1,0 +1,13 @@
+{
+  "name": "com.alexmalyutindev.unity-interface-serialization",
+  "displayName": "Interface Serialization",
+  "version": "1.0.0",
+  "unity": "2018.1",
+  "description": "Interface serialization feature for Unity Engine.",
+  "keywords": [
+    "Unity",
+    "UPM"
+  ],
+  "author": "Alex Malyutin",
+  "category": "Unity"
+}

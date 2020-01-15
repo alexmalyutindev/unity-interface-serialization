@@ -53,7 +53,7 @@ namespace AlexMalyutinDev.InterfaceSerialization
 
             position.x += 15;
             position.width -= 15;
-            foreach (var field in wrapper.Type.GetFields())
+            foreach (var field in wrapper.Type.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
             {
                 height += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
                 position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
@@ -65,12 +65,17 @@ namespace AlexMalyutinDev.InterfaceSerialization
 
         private void DrawField(Rect position, FieldInfo field)
         {
+            var name = ObjectNames.NicifyVariableName(field.Name);
             if (field.FieldType == typeof(int))
-                field.SetValue(wrapper.Value, EditorGUI.IntField(position, field.Name, (int)field.GetValue(wrapper.Value)));
+                field.SetValue(wrapper.Value, EditorGUI.IntField(position, name, (int)field.GetValue(wrapper.Value)));
             else if (field.FieldType == typeof(float))
-                field.SetValue(wrapper.Value, EditorGUI.FloatField(position, field.Name, (float)field.GetValue(wrapper.Value)));
+                field.SetValue(wrapper.Value, EditorGUI.FloatField(position, name, (float)field.GetValue(wrapper.Value)));
             else if (field.FieldType == typeof(string))
-                field.SetValue(wrapper.Value, EditorGUI.TextField(position, field.Name, (string)field.GetValue(wrapper.Value)));
+                field.SetValue(wrapper.Value, EditorGUI.TextField(position, name, (string)field.GetValue(wrapper.Value)));
+            else if (field.FieldType == typeof(Vector2))
+                field.SetValue(wrapper.Value, EditorGUI.Vector2Field(position, name, (Vector2)field.GetValue(wrapper.Value)));
+            else if (field.FieldType == typeof(Vector3))
+                field.SetValue(wrapper.Value, EditorGUI.Vector3Field(position, name, (Vector2)field.GetValue(wrapper.Value)));
         }
 
         private void CacheImplementations(SerializedProperty property)

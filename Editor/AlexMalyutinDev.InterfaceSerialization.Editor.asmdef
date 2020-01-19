@@ -1,0 +1,15 @@
+{
+    "name": "AlexMalyutinDev.InterfaceSerialization.Editor",
+    "references": [
+        "GUID:512ff537e109c47dea38a36de939e9c9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

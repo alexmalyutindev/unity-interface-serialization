@@ -23,7 +23,7 @@ namespace AlexMalyutinDev.InterfaceSerialization
 	[Serializable]
 	public class InterfaceWrapper<I> : InterfaceWrapper, ISerializationCallbackReceiver
 	{
-		internal InterfaceWrapper()
+		public InterfaceWrapper()
 		{
 			Type = typeof(I);
 		}

@@ -1,7 +1,7 @@
 {
   "name": "com.alexmalyutindev.unity-interface-serialization",
   "displayName": "Interface Serialization",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "unity": "2018.1",
   "description": "Interface serialization feature for Unity Engine.",
   "keywords": [

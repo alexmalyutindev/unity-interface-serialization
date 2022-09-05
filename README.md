@@ -1,7 +1,7 @@
 # Unity Interface serialization
 
 ## Example
-```
+``` csharp
 public interface IEffect 
 {
     public void Apply(ICreature current, ICreature target);
@@ -31,7 +31,7 @@ public class HealEffect : IEffect
     }
 }
 ```
-```
+``` csharp
 [Serializable]
 public class Effect : InterfaceWrapper<IEffect> { }
 
